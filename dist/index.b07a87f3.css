@@ -1,0 +1,152 @@
+@import "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&family=Noto+Sans:wght@700&display=swap";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #24282b;
+  flex-direction: column;
+  height: 100%;
+  font-family: Fira Sans;
+  font-size: 16px;
+  line-height: 2;
+  display: flex;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+li, ul, ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+svg {
+  stroke: inherit;
+  stroke-width: inherit;
+  fill: inherit;
+}
+
+.icon {
+  stroke-width: 0;
+  stroke: #fff;
+  fill: #2b4570;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (width >= 1920px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+.header-container {
+  background: url("headersmall@1x.f07d03ce.jpg");
+  width: 390px;
+  height: 844px;
+  position: absolute;
+}
+
+.wrapper {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background: #d9d9d966;
+  border-radius: 20px;
+  width: 358px;
+  height: 796px;
+  position: absolute;
+  top: 24px;
+  left: 16px;
+}
+
+.logo__img {
+  width: 144px;
+  height: 94px;
+  position: absolute;
+}
+
+.menu__link {
+  color: #24282b;
+  font-family: Fira Sans;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.menu-title {
+  color: #2b4570;
+  margin-bottom: 16px;
+  font-family: Fira Sans;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  position: absolute;
+  top: 320px;
+  left: calc(50% - 129px);
+}
+
+.menu-title__small {
+  color: #24282b;
+  text-align: center;
+  font-family: Fira Sans;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  position: absolute;
+  top: 379px;
+}
+
+.menu-btn {
+  color: #fff;
+  background-color: #2b4570;
+  border-radius: 20px;
+  width: 265px;
+  height: 50px;
+  font-family: Fira Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  position: absolute;
+  top: calc(50% - 10px);
+  bottom: 100px;
+  left: calc(50% - 89.5px);
+}
+
+footer {
+  background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.b07a87f3.css.map */
