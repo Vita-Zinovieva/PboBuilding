@@ -1,8 +1,19 @@
 .header-container {
-  position: absolute;
-  width: 390px;
-  height: 844px;
-  background: url(../images/section-photo/headersmall@1x.jpg);
+  position: relative;
+  @media screen and (max-width: 391px) {
+    width: 390px;
+    height: 844px;
+    background: url(../images/section-photo/headersmall@1x.jpg),
+      url(../images/section-photo/headersmall@2x.jpg);
+  }
+  @media screen and (min-width: $desktop) {
+    width: 1440px;
+    height: auto;
+    left: 0px;
+    top: 0px;
+    background: url(../images/section-photo/header@1x.jpg),
+      url(../images/section-photo/header@2x.jpg);
+  }
 }
 
 .wrapper {
@@ -14,9 +25,16 @@
   position: absolute;
   background: rgba(217, 217, 217, 0.4);
   backdrop-filter: blur(2px);
+
+  @media screen and (min-width: $desktop) {
+    width: 1280px;
+    height: 695px;
+    left: 80px;
+    top: 76px;
+  }
 }
 .header-wrap {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 391px) {
     width: 318px;
     height: 52px;
     display: flex;
@@ -26,6 +44,13 @@
     left: 20px;
     top: 41px;
   }
+
+  @media screen and (min-width: $desktop) {
+    width: 150px;
+    height: 94px;
+    left: 165px;
+    top: 100px;
+  }
 }
 
 .logo__img {
@@ -34,6 +59,8 @@
   @media screen and (min-width: $desktop) {
     width: 144px;
     height: 94px;
+    left: 165px;
+    top: 100px;
   }
 }
 .header-menu {
@@ -64,7 +91,7 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 391px) {
   /* body.lock { //щоб не прокручувався контент пыд выдкритим меню
     overflow: hidden;
   } */
@@ -74,6 +101,7 @@
     position: relative;
     width: 36px;
     height: 16px;
+    z-index: 3;
   }
   .menu-burger::after,
   .menu-burger::before {
@@ -159,6 +187,12 @@
   line-height: 1.2;
   color: $defolt-color;
   margin-bottom: 16px;
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 700;
+    font-size: 64px;
+    margin-bottom: 8px;
+  }
 }
 
 .header-title__small {
@@ -169,6 +203,11 @@
   color: $primary-text-color;
   text-align: center;
   display: flex;
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+  }
 }
 .header-btn {
   width: 265px;
@@ -180,8 +219,19 @@
   font-size: 16px;
   line-height: 1.2;
   border-radius: 20px;
-  margin-top: 209px;
+  margin-top: 201px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $defolt-color;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 83px;
+  }
 }
+
 .menu-mobile {
   height: 376px;
   justify-content: center;
@@ -195,5 +245,13 @@
 
   &.hidden {
     visibility: hidden;
+  }
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    width: 652px;
+    height: 251px;
+    left: 189px;
+    top: 312px;
+    align-items: start;
   }
 }
