@@ -1,16 +1,18 @@
 .header-container {
   position: relative;
-  @media screen and (max-width: 391px){
-  width: 390px;
-  height: 844px;
-  background: url(../images/section-photo/headersmall@1x.jpg), url(../images/section-photo/headersmall@2x.jpg);
+  @media screen and (max-width: 391px) {
+    width: 390px;
+    height: 844px;
+    background: url(../images/section-photo/headersmall@1x.jpg),
+      url(../images/section-photo/headersmall@2x.jpg);
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     width: 1440px;
     height: auto;
     left: 0px;
     top: 0px;
-    background: url(../images/section-photo/header@1x.jpg),url(../images/section-photo/header@2x.jpg);
+    background: url(../images/section-photo/header@1x.jpg),
+      url(../images/section-photo/header@2x.jpg);
   }
 }
 
@@ -24,15 +26,15 @@
   background: rgba(217, 217, 217, 0.4);
   backdrop-filter: blur(2px);
 
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     width: 1280px;
     height: 695px;
     left: 80px;
     top: 76px;
   }
 }
-.header-wrap{
-  @media screen and (max-width: 391px){
+.header-wrap {
+  @media screen and (max-width: 391px) {
     width: 318px;
     height: 52px;
     display: flex;
@@ -43,19 +45,18 @@
     top: 41px;
   }
 
-  @media screen and (min-width: $desktop){
-    width:150px;
+  @media screen and (min-width: $desktop) {
+    width: 150px;
     height: 94px;
     left: 165px;
     top: 100px;
-
   }
 }
 
 .logo__img {
   width: 120px;
   height: 52px;
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     width: 144px;
     height: 94px;
     left: 165px;
@@ -67,7 +68,7 @@
   display: flex; */
 }
 .header-menu__list {
- /*  height: 347px;
+  /*  height: 347px;
   display: flex;
   flex-direction:column;
   position: absolute;
@@ -85,26 +86,25 @@
   line-height: 1.2;
   color: $primary-text-color;
   cursor: pointer; */
-
 }
 .menu-burger {
   display: none;
 }
 
-@media screen and (max-width: 391px){
+@media screen and (max-width: 391px) {
   /* body.lock { //щоб не прокручувався контент пыд выдкритим меню
     overflow: hidden;
   } */
 
   .menu-burger {
-   display: block; 
-   position: relative;
-   width: 36px;
-   height: 16px;
-   z-index: 3;
+    display: block;
+    position: relative;
+    width: 36px;
+    height: 16px;
+    z-index: 3;
   }
   .menu-burger::after,
-  .menu-burger::before{
+  .menu-burger::before {
     content: '';
     background-color: black;
     position: absolute;
@@ -113,13 +113,13 @@
     left: 0;
     transition: all 0.3s ease 0;
   }
-  .menu-burger::before{
+  .menu-burger::before {
     top: 0;
   }
-  .menu-burger::after{
+  .menu-burger::after {
     bottom: 0;
   }
-  .menu-burger span{
+  .menu-burger span {
     content: '';
     background-color: black;
     position: absolute;
@@ -139,14 +139,14 @@
     height: 100%;
     background: rgba(0, 0, 0, 0);
     transition: transform 0.7s;
-    transform: translateY(-100%); 
+    transform: translateY(-100%);
     overflow: auto;
   }
   .header-menu.active {
     transform: translateY(0);
     z-index: 2;
   }
-  
+
   .menu-burger.active::before {
     transform: rotate(45deg);
     top: 7px;
@@ -157,27 +157,26 @@
   }
   .menu-burger.active span {
     transform: scale(0);
-   }
-   .header-menu__list {
+  }
+  .header-menu__list {
     height: 347px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     position: absolute;
     align-items: center;
     place-content: center space-around;
     top: 248px;
-  
   }
-   .header-menu__link {
+  .header-menu__link {
     font-family: Fira Sans;
     font-weight: 400;
     font-size: 24px;
     line-height: 1.2;
     color: $primary-text-color;
     cursor: pointer;
-      &:hover{
-        color: $defolt-color;
-      }
+    &:hover {
+      color: $defolt-color;
+    }
   }
 }
 
@@ -187,17 +186,16 @@
   font-size: 36px;
   line-height: 1.2;
   color: $defolt-color;
-  margin-bottom:16px ;
+  margin-bottom: 16px;
 
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     font-weight: 700;
     font-size: 64px;
-    margin-bottom:8px ;
+    margin-bottom: 8px;
   }
-
 }
 
-.header-title__small{
+.header-title__small {
   font-family: Fira Sans;
   font-weight: 400;
   font-size: 24px;
@@ -205,19 +203,17 @@
   color: $primary-text-color;
   text-align: center;
   display: flex;
-  
-  @media screen and (min-width: $desktop){
+
+  @media screen and (min-width: $desktop) {
     font-weight: 600;
     font-size: 36px;
-    
   }
-  
 }
 .header-btn {
   width: 265px;
   height: 50px;
   background-color: $defolt-color;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Fira Sans;
   font-weight: 400;
   font-size: 16px;
@@ -225,39 +221,37 @@
   border-radius: 20px;
   margin-top: 201px;
   cursor: pointer;
-  
-  &:hover {
-     background-color: $hover-color;
-     color:$defolt-color;
-}
 
-  @media screen and (min-width: $desktop){
+  &:hover {
+    background-color: $hover-color;
+    color: $defolt-color;
+  }
+
+  @media screen and (min-width: $desktop) {
     margin-top: 83px;
   }
 }
 
-.menu-mobile{
+.menu-mobile {
   height: 376px;
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   position: absolute;
   left: 16px;
   top: 344px;
   cursor: pointer;
 
-  &.hidden{
+  &.hidden {
     visibility: hidden;
-}
-@media screen and (min-width: $desktop){
+  }
+  @media screen and (min-width: $desktop) {
     position: absolute;
     width: 652px;
     height: 251px;
     left: 189px;
     top: 312px;
     align-items: start;
+  }
 }
-}
-
-
