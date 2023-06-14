@@ -1,0 +1,111 @@
+.about_wrapper {
+  padding-top: 68px;
+}
+.title_wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+  justify-content: center;
+  gap: 12px;
+}
+
+/**
+ Animation block ----------------------------------------------------------------------
+*/
+
+.element-animation {
+  position: relative;
+  width: 50px;
+  height: 2px;
+  border: 1px solid #2b4570;
+}
+.element-animation.rotate {
+  transform: rotate(180deg);
+}
+
+.title_wrapper:hover .circul {
+  animation-play-state: running;
+}
+
+.circul {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #2b4570;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-7%, -50%);
+}
+.activate_animation {
+  animation-name: blue-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  //або коротко
+  // animation: blue-circle, 2s, linear, 1, 1s;
+}
+@keyframes blue-circle {
+  0% {
+    left: 0px;
+  }
+  50% {
+    background-color: #fbca16;
+  }
+  100% {
+    left: 36px;
+    background-color: #fbca16;
+  }
+}
+
+/**
+  Animation block END----------------------------------------------------------------------
+*/
+
+.about_title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $curent-text-color;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $curent-text-color;
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+.info_wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 171px;
+  height: 66px;
+}
+.number {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #2b4570;
+  margin-bottom: 4px;
+}
+
+.info_text {
+  font-size: 16px;
+  line-height: 1.18;
+  color: $disable-color;
+}
