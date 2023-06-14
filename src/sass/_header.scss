@@ -8,7 +8,7 @@
   }
   @media screen and (min-width: $desktop) {
     width: 1440px;
-    height: auto;
+    height: 847px;
     left: 0px;
     top: 0px;
     background: url(../images/section-photo/header@1x.jpg),
@@ -31,6 +31,7 @@
     height: 695px;
     left: 80px;
     top: 76px;
+    position: relative;
   }
 }
 .header-wrap {
@@ -48,8 +49,10 @@
   @media screen and (min-width: $desktop) {
     width: 150px;
     height: 94px;
-    left: 165px;
-    top: 100px;
+    position: absolute;
+    left: 85px;
+    top: 25px;
+
   }
 }
 
@@ -59,8 +62,9 @@
   @media screen and (min-width: $desktop) {
     width: 144px;
     height: 94px;
-    left: 165px;
-    top: 100px;
+    /* position: absolute;
+    left: 30px;
+    top: 100px; */
   }
 }
 .header-menu {
@@ -68,31 +72,33 @@
   display: flex; */
 }
 .header-menu__list {
-  /*  height: 347px;
+  height: 94px;
   display: flex;
-  flex-direction:column;
   position: absolute;
   align-items: center;
   place-content: center space-around;
-  top: 248px;
- */
+  top: 25px;
+  left: 600px;
+  width: 680px;
 }
-.header-menu__item {
+.header-menu__none {
+  display: none;
 }
 .header-menu__link {
-  /* font-family: Fira Sans;
+  font-family: Fira Sans;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.2;
   color: $primary-text-color;
-  cursor: pointer; */
+  cursor: pointer; 
 }
 .menu-burger {
   display: none;
 }
 
-@media screen and (max-width: 391px) {
-  /* body.lock { //щоб не прокручувався контент пыд выдкритим меню
+
+@media screen and (max-width: 391px){
+  /* body.lock { //щоб не прокручувався контент під відкритим меню
     overflow: hidden;
   } */
 
