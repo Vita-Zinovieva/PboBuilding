@@ -1,9 +1,9 @@
 document.addEventListener('scroll', function () {
-  var aboutSection = document.getElementById('about');
-  var circulElements = document.querySelectorAll('.circul');
+  const aboutSection = document.getElementById('about');
+  const circulElements = document.querySelectorAll('.circul');
 
-  var mySection = aboutSection.getBoundingClientRect();
-  var isAboutSectionVisible =
+  const mySection = aboutSection.getBoundingClientRect();
+  const isAboutSectionVisible =
     mySection.top + 200 < window.innerHeight && mySection.bottom - 100 >= 0;
 
   circulElements.forEach(item => {

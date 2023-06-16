@@ -1,5 +1,12 @@
 .about_wrapper {
   padding-top: 68px;
+  @media screen and (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 120px 217px 0;
+  }
 }
 .title_wrapper {
   display: flex;
@@ -7,20 +14,33 @@
   margin-bottom: 36px;
   justify-content: center;
   gap: 12px;
+  @media screen and (min-width: $desktop) {
+    justify-content: left;
+  }
 }
 
 /**
  Animation block ----------------------------------------------------------------------
 */
-
-.element-animation {
+.desktop_screen {
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+.element_animation {
   position: relative;
   width: 50px;
-  height: 2px;
-  border: 1px solid #2b4570;
+  height: 1px;
+  border-bottom: 1px solid #2b4570;
+  @media screen and (min-width: $desktop) {
+    width: 89px;
+  }
 }
-.element-animation.rotate {
+.element_animation.rotate {
   transform: rotate(180deg);
+  @media screen and (min-width: $desktop) {
+    transform: rotate(0);
+  }
 }
 
 .title_wrapper:hover .circul {
@@ -36,6 +56,10 @@
   top: 50%;
   left: 0;
   transform: translate(-7%, -50%);
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
 }
 .activate_animation {
   animation-name: blue-circle;
@@ -55,7 +79,7 @@
     background-color: #fbca16;
   }
   100% {
-    left: 36px;
+    left: 65px;
     background-color: #fbca16;
   }
 }
@@ -70,6 +94,10 @@
   font-size: 24px;
   line-height: 1.2;
   color: $curent-text-color;
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+  }
 }
 
 .text {
@@ -77,6 +105,9 @@
   font-size: 14px;
   line-height: 1.2;
   color: $curent-text-color;
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
@@ -84,17 +115,28 @@
 }
 .info {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 16px;
   margin-top: 16px;
+  @media screen and (min-width: $desktop) {
+    margin-top: 36px;
+    justify-content: space-between;
+  }
 }
 .info_wrapper {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   width: 171px;
   height: 66px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: auto;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 435px;
+  }
 }
 .number {
   font-weight: 600;
@@ -102,10 +144,25 @@
   line-height: 1.2;
   color: #2b4570;
   margin-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.36;
+    margin-right: 50px;
+  }
 }
 
 .info_text {
   font-size: 16px;
   line-height: 1.18;
   color: $disable-color;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
