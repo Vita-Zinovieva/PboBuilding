@@ -7,13 +7,6 @@ let headerMenu = document.querySelector('.header-menu');
 let mobileMenu = document.querySelector('.menu-mobile');
 //console.log(headerMenu);
 
-/* menu.addEventListener('click', function(){
-  menu.classList.toggle('active');
-	headerMenu.classList.toggle('active');
-  mobileMenu.classList.toggle('hidden');
-  body.classList.toggle('lock');
-}) */
-
 menu.addEventListener('click', event => {
   event.preventDefault();
   menu.classList.toggle('active');
