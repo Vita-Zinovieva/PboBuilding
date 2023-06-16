@@ -14,11 +14,12 @@
     }
 
   @media screen and (min-width: $desktop) {
-    max-width: 1062px;
+    //max-width: 1062px;
+    min-width: 1062px;
     height: 545px;
+    top: 80%;
     /*left: calc(50% - 1062px/2);
     top: calc(50% - 545px/2 + 73px);
-     top: 90%;
       left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%);
@@ -40,10 +41,10 @@
   position: absolute;
   left: 0px;
   background: #FFFFFF;
-  
-  
+ 
   @media screen and (min-width: $desktop) {
     left: calc(50% - 1062px/2);
+    border-radius: 20px;
     //top: calc(50% - 545px/2 + 73px);
   }
 }
@@ -172,9 +173,8 @@ textarea {
   }
 }
 
-/**
- Animation block ----------------------------------------------------------------------
-*/
+///Анімація
+/// 
 .element-animation {
   display: none;
 }
@@ -195,9 +195,9 @@ textarea {
 .line{
   width: 87px;
   color:#2B4570;
-}
+} 
 
-.circul {
+/* .circul {
   border-radius: 50%;
   background-color: #2b4570;
   position: absolute;
@@ -206,17 +206,13 @@ textarea {
   transform: translate(-7%, -50%);
   width: 25px;
   height: 25px;
-  
-}
-.activate-animation {
   animation-name: blue-circle;
   animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-delay: 1s;
   animation-fill-mode: forwards;
-  //або коротко
-  // animation: blue-circle, 2s, linear, 1, 1s;
+  animation: blue-circle, 2s, linear, 1, 1s;
 }
 @keyframes blue-circle {
   0% {
@@ -229,8 +225,38 @@ textarea {
     left: 65px;
     background-color: #fbca16;
   }
+  }*/
+  .circul{
+    width: 25px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2B4570;
+    position: absolute;
+    left: 0%;
+    right: 73.03%;
+    top: 0%;
+    bottom: 0%;
+    animation-name: blue-circle;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    
   }
-}
+    @keyframes blue-circle{ 
+      0%{
+        left: 0px
+      }
+      50%{
+        background-color:#FBCA16;
+      }
+      100%{
+        left: 95px;
+        background-color:#FBCA16;
+      }
+    }
+} 
+
 .element-left{
   position: absolute;
   rotate: 180deg;
@@ -243,7 +269,3 @@ textarea {
   right: 280px;
   
 }
-
-/**
-  Animation block END----------------------------------------------------------------------
-*/
