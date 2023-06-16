@@ -1,0 +1,271 @@
+.form-container{
+  min-width: 391px;
+  height: 604px;
+  position: absolute;
+  left: 0px;
+  top: 158px;
+  
+    @media screen and (min-width: 768px){
+      //top: 158px;
+      top: 90%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+
+  @media screen and (min-width: $desktop) {
+    //max-width: 1062px;
+    min-width: 1062px;
+    height: 545px;
+    top: 80%;
+    /*left: calc(50% - 1062px/2);
+    top: calc(50% - 545px/2 + 73px);
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    */
+  }
+} 
+.form-send{
+  visibility: hidden;
+}
+.form-send.hide {
+  visibility: hidden;
+}
+
+.form-send.show {
+  visibility: visible;
+} 
+
+.form-wrapper{
+  position: absolute;
+  left: 0px;
+  background: #FFFFFF;
+ 
+  @media screen and (min-width: $desktop) {
+    left: calc(50% - 1062px/2);
+    border-radius: 20px;
+    //top: calc(50% - 545px/2 + 73px);
+  }
+}
+.form{
+  padding: 0 15px  0 15px; 
+  @media screen and (min-width: $desktop) {
+    padding: 0 234px  0 234px; 
+  }
+}
+  
+.form-title{
+  width: auto;
+  height: 29px;
+  margin-top: 64px;
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: $primary-text-color;
+  margin: 64px auto 56px;
+
+  @media screen and (min-width: $desktop) {
+    margin: 68px auto 36px;
+  }
+}
+.input,
+textarea {
+  width: 357px;
+  border-radius: 20px;
+  border: 1px solid #2B4570;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  cursor: pointer;
+  @media screen and (min-width: $desktop){
+    width: 287px;
+  }
+}
+textarea {
+  height: 165px;
+  padding: 16px 0 0 16px;
+  
+  @media screen and (min-width: $desktop){
+   height: 133px;
+   width: 594px;
+   
+  }
+}
+
+.input {
+  height: 44px;
+  padding-left: 16px;
+
+  @media screen and (min-width: $desktop){
+    height: 52px;
+    margin-bottom: 24px;
+    &:nth-child(2n + 1){
+    margin-right: 10px;
+  }
+  }
+}
+
+::placeholder{
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: calc(50% - 34px/2 - 145.5px);
+  top: 14px;
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #888888;
+  
+  @media screen and (min-width: $desktop) {
+    left: calc(50% - 134px/2 - 214px);
+    top: 16px;
+ }
+}
+@media screen and (min-width: $desktop) {
+     input::placeholder {
+      left: calc(50% - 81px/2 - 87px);
+      top: 14px;
+      
+  }
+}
+
+
+.form-icon-close{
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  cursor: pointer;
+  
+  &:hover {
+    color: $defolt-color;
+  }
+  @media screen and (min-width: $desktop) {
+    right: 32px;
+  top: 32px;
+ }
+}
+
+.send-btn{
+  width: 265px;
+  height: 50px;
+  background-color: $defolt-color;
+  color: #ffffff;
+  font-family: Fira Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 50px 24px 50px;
+  
+  &:hover,
+  &:focus {
+    background-color: $hover-color;
+    color: $defolt-color;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 160px 39px 160px;
+  }
+}
+
+///Анімація
+/// 
+.element-animation {
+  display: none;
+}
+ 
+.element-animation {
+  @media screen and (min-width: $desktop) {  
+    position: relative;
+    width: 50px;
+    height: 1px;
+    border-bottom: 1px solid #2b4570;
+    width: 89px;
+    display: block;
+}
+.form-send:hover.circul{
+  animation-play-state: running; 
+}
+
+.line{
+  width: 87px;
+  color:#2B4570;
+} 
+
+/* .circul {
+  border-radius: 50%;
+  background-color: #2b4570;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-7%, -50%);
+  width: 25px;
+  height: 25px;
+  animation-name: blue-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation: blue-circle, 2s, linear, 1, 1s;
+}
+@keyframes blue-circle {
+  0% {
+    left: 0px;
+  }
+  50% {
+    background-color: #fbca16;
+  }
+  100% {
+    left: 65px;
+    background-color: #fbca16;
+  }
+  }*/
+  .circul{
+    width: 25px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2B4570;
+    position: absolute;
+    left: 0%;
+    right: 73.03%;
+    top: 0%;
+    bottom: 0%;
+    animation-name: blue-circle;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    
+  }
+    @keyframes blue-circle{ 
+      0%{
+        left: 0px
+      }
+      50%{
+        background-color:#FBCA16;
+      }
+      100%{
+        left: 95px;
+        background-color:#FBCA16;
+      }
+    }
+} 
+
+.element-left{
+  position: absolute;
+  rotate: 180deg;
+  top: 85px;
+  left: 280px;
+}
+.element-right{
+  position: absolute;
+  top: 85px;
+  right: 280px;
+  
+}

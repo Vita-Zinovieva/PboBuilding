@@ -1,84 +1,126 @@
 .header-container {
-  position: absolute;
-  width: 390px;
-  height: 844px;
-  background: url(../images/section-photo/headersmall@1x.jpg);
+  position: relative;
+  min-width: 390px;
+  min-height: 844px;
+  background: url(../images/section-photo/headersmall@1x.jpg),
+    url(../images/section-photo/headersmall@2x.jpg) no-repeat;
+  background-size: cover;  
+      
+   @media screen and (min-width: $desktop) {
+    min-width: 1440px;
+    min-height: 847px;
+    left: 0px;
+    top: 0px;
+    background: url(../images/section-photo/header@1x.jpg),
+      url(../images/section-photo/header@2x.jpg) no-repeat;
+    background-size: cover;
+  }
 }
 
 .wrapper {
-  width: 358px;
-  height: 796px;
+  min-width: 358px;
+  min-height: 796px;
   top: 24px;
-  left: 16px;
   border-radius: 20px;
-  position: absolute;
+  position: inherit;
   background: rgba(217, 217, 217, 0.4);
   backdrop-filter: blur(2px);
+ 
+  @media screen and (min-width: $desktop) {
+    min-width: 1280px;
+    min-height: 695px;
+    //padding-left: 80px;
+    top: 76px;
+    position: relative;
+  }
 }
-.header-wrap{
-  @media screen and (max-width: 768px){
-    width: 318px;
-    height: 52px;
+.header-wrap {
+    min-width: 318px;
+    min-height: 52px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    left: 20px;
-    top: 41px;
-  }
+    padding: 41px 20px 20px 0;
+   
 
+ @media screen and (min-width: 768px) {
+  min-width: 150px;
+  min-height: 94px;
+  padding: 25px 85px 0 85px;
+  
+ }
+  @media screen and (min-width: $desktop) {
+    min-width: 150px;
+    min-height: 94px;
+    
+
+  }
 }
 
 .logo__img {
   width: 120px;
   height: 52px;
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     width: 144px;
     height: 94px;
+    
   }
 }
-.header-menu {
-  /* justify-content: center;
-  display: flex; */
-}
+
 .header-menu__list {
- /*  height: 347px;
+  @media screen and (min-width: 769px){
+  width: 680px;
   display: flex;
-  flex-direction:column;
+  position: relative;
+  align-items: center;
+  place-content: center space-around;
+  top: -45px;
+  left: 300px;
+  
+}
+@media screen and (min-width: $desktop){
+  height: 94px;
+  display: flex;
   position: absolute;
   align-items: center;
   place-content: center space-around;
-  top: 248px;
- */
+  top: 25px;
+  left: 600px;
+  min-width: 680px;
 }
-.header-menu__item {
 }
+
+.header-menu__none {
+  @media screen and (min-width: 768px){
+  display: none;
+}}
 .header-menu__link {
-  /* font-family: Fira Sans;
+  font-family: Fira Sans;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.2;
   color: $primary-text-color;
-  cursor: pointer; */
-
+  cursor: pointer; 
 }
 .menu-burger {
   display: none;
 }
 
+
 @media screen and (max-width: 768px){
-  /* body.lock { //щоб не прокручувався контент пыд выдкритим меню
+  /* body.lock { //щоб не прокручувався контент під відкритим меню
     overflow: hidden;
   } */
 
   .menu-burger {
-   display: block; 
-   position: relative;
-   width: 36px;
-   height: 16px;
+    display: block;
+    position: relative;
+    width: 36px;
+    height: 16px;
+    z-index: 3;
   }
   .menu-burger::after,
-  .menu-burger::before{
+  .menu-burger::before {
     content: '';
     background-color: black;
     position: absolute;
@@ -87,13 +129,13 @@
     left: 0;
     transition: all 0.3s ease 0;
   }
-  .menu-burger::before{
+  .menu-burger::before {
     top: 0;
   }
-  .menu-burger::after{
+  .menu-burger::after {
     bottom: 0;
   }
-  .menu-burger span{
+  .menu-burger span {
     content: '';
     background-color: black;
     position: absolute;
@@ -113,14 +155,14 @@
     height: 100%;
     background: rgba(0, 0, 0, 0);
     transition: transform 0.7s;
-    transform: translateY(-100%); 
+    transform: translateY(-100%);
     overflow: auto;
   }
   .header-menu.active {
     transform: translateY(0);
     z-index: 2;
   }
-  
+
   .menu-burger.active::before {
     transform: rotate(45deg);
     top: 7px;
@@ -131,27 +173,27 @@
   }
   .menu-burger.active span {
     transform: scale(0);
-   }
-   .header-menu__list {
-    height: 347px;
+  }
+  .header-menu__list {
+    min-height: 347px;
     display: flex;
-    flex-direction:column;
-    position: absolute;
+    flex-direction: column;
+   // position: absolute;
     align-items: center;
     place-content: center space-around;
-    top: 248px;
-  
+    padding-top: 224px;
+    padding-bottom: 225px;
   }
-   .header-menu__link {
+  .header-menu__link {
     font-family: Fira Sans;
     font-weight: 400;
     font-size: 24px;
     line-height: 1.2;
     color: $primary-text-color;
     cursor: pointer;
-      &:hover{
-        color: $defolt-color;
-      }
+    &:hover {
+      color: $defolt-color;
+    }
   }
 }
 
@@ -161,10 +203,20 @@
   font-size: 36px;
   line-height: 1.2;
   color: $defolt-color;
-  margin-bottom:16px ;
+  margin-bottom: 16px;
+    @media screen and (min-width: 769px){
+      font-size: 50px;
+
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-weight: 700;
+      font-size: 64px;
+      margin-bottom: 8px;
+    }
 }
 
-.header-title__small{
+.header-title__small {
   font-family: Fira Sans;
   font-weight: 400;
   font-size: 24px;
@@ -172,33 +224,54 @@
   color: $primary-text-color;
   text-align: center;
   display: flex;
-  
-  
+  @media screen and (min-width: 769px){
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+  }
 }
 .header-btn {
   width: 265px;
   height: 50px;
   background-color: $defolt-color;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Fira Sans;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
   border-radius: 20px;
   margin-top: 209px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $defolt-color;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 83px;
+  }
 }
-.menu-mobile{
-  height: 376px;
+
+.menu-mobile {
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction:column;
-  position: absolute;
-  left: 16px;
-  top: 344px;
+  flex-direction: column;
+  margin: 228px auto auto auto;
   cursor: pointer;
-
-  &.hidden{
+  
+  &.hidden {
     visibility: hidden;
-}
+  }
+  @media screen and (min-width: $desktop) {
+    width: 652px;
+    height: 251px;
+    align-items: start; 
+    margin: 119px auto 372px 109px;
+    
+  }
 }

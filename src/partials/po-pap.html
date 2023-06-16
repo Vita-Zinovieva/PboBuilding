@@ -1,0 +1,38 @@
+<section class="form-send">
+  <div class="form-container container">
+    <div class="form-wrapper">
+      
+      <svg id="close" class="form-icon-close" width="25" height="25">
+        <use href="./images/svg/symbol-defs.svg#icon-x-icon"></use>
+      </svg>
+      <div class="element-left">
+        <div class="element-animation">
+          <!-- <hr class="line"> -->
+          <span class="circul"></span>
+        </div>
+      </div>
+        
+
+      <h2 class="form-title">Отримати Консультацію</h2>
+      
+      <div class="element-right">
+        <div class="element-animation">
+          <!-- <hr class="line"> -->
+          <span class="circul"></span>
+        </div>
+      </div>
+      
+      <form class="form" action='usproekt.pbo@gmail.com'> 
+        <fieldset>
+          <input class="input" type="text" name="firstname" placeholder="Ім'я" required>
+          <input class="input" type="text" name="lastname" placeholder="Прізвище" required>
+          <input class="input" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
+          <input class="input" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Телефон" required>
+          <textarea class="textarea" name="message" placeholder="Повідомлення"></textarea>
+          <button id = "send" type="submit" class="send-btn" onclick="alert('Готово!')">Отримати консультацію</button>
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+</section>
