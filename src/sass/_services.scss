@@ -1,0 +1,248 @@
+.section {
+  padding-top: 68px;
+}
+
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  padding-right: 109px;
+  padding-left: 217px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: auto;
+  margin-bottom: 68px;
+  margin-left: auto;
+}
+
+.servicesTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: calc(29 / 24);
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: calc(43 / 36);
+  }
+}
+
+.element-animation {
+  position: relative;
+  width: 50px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    width: 89px;
+    height: 25px;
+  }
+}
+--при наведенні на блок спрацьовує анімація,
+потрібно привязати до всього блоку-- .element-animation:hover.circul {
+  animation-play-state: running;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  background-color: #131200;
+
+  @media screen and (min-width: $desktop) {
+    width: 89px;
+  }
+}
+.circul {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #2b4570;
+  position: absolute;
+  left: 0%;
+  right: 73.03%;
+  top: 0%;
+  bottom: 0%;
+  animation-name: blue-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  /* або коротко
+    animation: blue-circle, 2s, linear, 1, 1s;*/
+
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+}
+@keyframes blue-circle {
+  0% {
+    left: 0px;
+  }
+  50% {
+    background-color: #fbca16;
+  }
+  100% {
+    left: 50px;
+    background-color: #fbca16;
+
+    @media screen and (min-width: $desktop) {
+      left: 95px;
+    }
+  }
+}
+
+.servicesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.serviceWrapper {
+  position: relative;
+}
+
+.reverse {
+  rotate: 180deg;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: calc(29 / 24);
+  cursor: pointer;
+}
+
+.numbering {
+  margin-right: 48px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+/* Убираем стандартный маркер Firefox */
+details > summary {
+  list-style: none;
+}
+
+/* Добавляем собственный маркер для закрытого состояния */
+details summary:after {
+  content: 'Дивитись';
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  color: $defolt-color;
+}
+
+/* Добавляем собственный маркер для открытого состояния */
+details[open] summary:after {
+  content: 'Згорнути';
+}
+
+.serviceInner {
+  margin-bottom: 16px;
+  padding-right: 109px;
+  padding-left: 85px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  color: $disable-color;
+}
+
+.underLine {
+  width: 870px;
+  height: 1px;
+  position: absolute;
+  bottom: 0px;
+  background-color: #c5c3c6;
+}
+
+details[open] + .underLine {
+  bottom: -4px;
+}
+
+.inner {
+  margin: 10;
+  width: 358px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../images/section-photo/services/services1@1x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  // background-color: red;
+}
+
+.btn {
+  width: 328px;
+  height: 55px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 48, 58, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  z-index: 3;
+}
+
+.backdrop--is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  &.modal {
+    transform: scale(1.25);
+  }
+}
+
+.modal {
+  width: 358px;
+  min-height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding: 92px 16px;
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+
+.modalBtn {
+  position: absolute;
+  top: 48px;
+  right: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
