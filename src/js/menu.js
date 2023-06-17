@@ -1,11 +1,8 @@
 let menu = document.querySelector('.menu-burger');
-//console.log(menu);
 let body = document.querySelector('body');
-//console.log(body);
 let headerMenu = document.querySelector('.header-menu');
-//console.log(headerMenu);
 let mobileMenu = document.querySelector('.menu-mobile');
-//console.log(headerMenu);
+
 
 menu.addEventListener('click', event => {
   event.preventDefault();
@@ -15,16 +12,41 @@ menu.addEventListener('click', event => {
   body.classList.toggle('lock');
 });
 
+//Validation input form
+let form  = document.querySelector('form');
+console.log(form);
+let fields = form.querySelectorAll('.field');
+console.log(fields);
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault()
+
+  var errors = form.querySelectorAll('.error')
+
+  for (var i = 0; i < errors.length; i++) {
+    errors[i].remove()
+  }
+
+  for (var i = 0; i < fields.length; i++) {
+    if (!fields[i].value) {
+      console.log('field is blank', fields[i])
+      var error = document.createElement('div')
+      error.className = 'error'
+      error.style.color = 'red'
+      error.innerHTML = 'Cannot be blank'
+      form[i].parentElement.insertBefore(error, fields[i])
+    }
+  }
+
+})
+
+
 //відкриття форми
 
 let closeButton = document.querySelector('#close');
-console.log(closeButton);
 let sendButton = document.querySelector('#send');
-console.log(sendButton);
 let headerBtnOpenform = document.querySelector('#btn');
-console.log(headerBtnOpenform);
 let formSend = document.querySelector('.form-send');
-console.log(formSend);
 
 headerBtnOpenform.addEventListener('click', event => {
   event.preventDefault();
@@ -36,8 +58,30 @@ closeButton.addEventListener('click', event => {
   formSend.classList.remove('show');
   formSend.classList.add('hide');
 });
-sendButton.addEventListener('click', event => {//додати выдправку на пошту
+sendButton.addEventListener('submit', event => {
   event.preventDefault();
+  
   formSend.classList.remove('show');
   formSend.classList.add('hide');
+  sendMessage(form);
 });
+
+//function send message form
+
+async function sendMessage(form) {
+  const formData = new formData(form);
+  if (formData){
+    const url = 'sendmessage.php';
+    const response = await fetch(url,{
+      method:"POST",
+      body:formData
+    });
+    if (response.ok){
+      formSend.reset();
+      alert('Form sent');
+    } else {
+      alert ('Eror');
+    } 
+   }
+}
+
