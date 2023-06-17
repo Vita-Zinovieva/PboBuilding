@@ -1,11 +1,8 @@
 let menu = document.querySelector('.menu-burger');
-//console.log(menu);
 let body = document.querySelector('body');
-//console.log(body);
 let headerMenu = document.querySelector('.header-menu');
-//console.log(headerMenu);
 let mobileMenu = document.querySelector('.menu-mobile');
-//console.log(headerMenu);
+
 
 menu.addEventListener('click', event => {
   event.preventDefault();
@@ -15,16 +12,45 @@ menu.addEventListener('click', event => {
   body.classList.toggle('lock');
 });
 
+//Validation input form
+/* (function(){
+let input = document.querySelector('.input');
+console.log(input);
+let form  = document.querySelector('form');
+console.log(form);
+
+let elem               = document.createElement('div');
+      elem.id            = 'notify';
+      elem.style.display = 'none';
+
+      form.appendChild(elem);
+
+  input.addEventListener('invalid', function(event){
+    event.preventDefault();
+    if ( ! event.target.validity.valid ) {
+      input.className    = 'invalid animated shake';
+      elem.textContent   = 'Username should only contain lowercase letters e.g. john';
+      elem.className     = 'error';
+      elem.style.display = 'block';
+    }
+  });
+
+  input.addEventListener('input', function(event){
+    if ( 'block' === elem.style.display ) {
+      input.className = '';
+      elem.style.display = 'none';
+    }
+  });
+
+})(); 
+ */
+
 //відкриття форми
 
 let closeButton = document.querySelector('#close');
-console.log(closeButton);
 let sendButton = document.querySelector('#send');
-console.log(sendButton);
 let headerBtnOpenform = document.querySelector('#btn');
-console.log(headerBtnOpenform);
 let formSend = document.querySelector('.form-send');
-console.log(formSend);
 
 headerBtnOpenform.addEventListener('click', event => {
   event.preventDefault();
@@ -36,8 +62,30 @@ closeButton.addEventListener('click', event => {
   formSend.classList.remove('show');
   formSend.classList.add('hide');
 });
-sendButton.addEventListener('click', event => {//додати выдправку на пошту
+sendButton.addEventListener('submit', event => {
   event.preventDefault();
+  
   formSend.classList.remove('show');
   formSend.classList.add('hide');
+  sendMessage(form);
 });
+
+//function send message form
+
+async function sendMessage(form) {
+  const formData = new formData(form);
+  if (formData){
+    const url = 'sendmessage.php';
+    const response = await fetch(url,{
+      method:"POST",
+      body:formData
+    });
+    if (response.ok){
+      formSend.reset();
+      alert('Form sent');
+    } else {
+      alert ('Eror');
+    } 
+   }
+}
+

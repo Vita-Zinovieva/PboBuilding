@@ -22,17 +22,17 @@
         </div>
       </div>
       
-      <form class="form" action='usproekt.pbo@gmail.com'> 
+      <form class="form" action='#'> 
         <fieldset>
           <input class="input" type="text" name="firstname" placeholder="Ім'я" required>
-          <input class="input" type="text" name="lastname" placeholder="Прізвище" required>
+          <input class="input" type="text" name="lastname" placeholder="Прізвище" >
           <input class="input" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email">
-          <input class="input" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Телефон" required>
-          <textarea class="textarea" name="message" placeholder="Повідомлення"></textarea>
-          <button id = "send" type="submit" class="send-btn" onclick="alert('Готово!')">Отримати консультацію</button>
+          <input class="input" min="1" max="10" name="phone-number" pattern="\+?[0-9\s\-\(\)]+" placeholder="Телефон" >
+          <textarea class="textarea" name="message" placeholder="Повідомлення" required></textarea>
+          <button id = "send" type="submit" class="send-btn">Отримати консультацію</button>
         </fieldset>
       </form>
     </div>
-
+ 
   </div>
 </section>
