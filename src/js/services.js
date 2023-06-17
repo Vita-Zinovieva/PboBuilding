@@ -19,85 +19,122 @@ const servicesImages = [
   services8,
 ];
 
-const servicesEl = document.querySelector('.servicesWrapper');
-const modalEl = document.querySelector('.modalWrapper');
+const servicesEl = document.querySelector('.mobile-services-wrapper');
+const modalEl = document.querySelector('.modal-wrapper');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modal = document.querySelector('[data-modal]');
 
 servicesEl.addEventListener('click', handleBtnClick);
+document.addEventListener('scroll', handleAnimation);
 
-createServicesMurkup();
+// createServicesMurkup();
 
-window.onresize = handleScreenWidthCange;
+// window.onresize = handleScreenWidthCange;
 
-function handleScreenWidthCange(e) {
-  createServicesMurkup();
-}
+// function handleScreenWidthCange(e) {
+//   createServicesMurkup();
+// }
 
 function handleBtnClick(e) {
-  if (!e.target.classList.contains('btn')) {
+  if (!e.target.classList.contains('services-btn')) {
     return;
   }
   const id = +e.target.dataset.id;
   const service = servicesData.find(item => item.id === id);
-  const markup = `<p>${service.description}</p>
+  const markup = `<div class="services-modal-inner">
+      <p class="services-modal-description">${service.description}</p>
       <img src="${servicesImages[service.id - 1]}" alt="${
     service.title
-  }" width="358" height="129">
+  }" width="358" height="129" class="services-modal-img">
+  </div>
 `;
-  toggleModal();
+  handleModalOpen();
   modalEl.innerHTML = markup;
-  closeModalBtn.addEventListener('click', toggleModal);
+  closeModalBtn.addEventListener('click', handleModalClose);
 }
 
-function toggleModal() {
-  modal.classList.toggle('backdrop--is-hidden');
-  document.body.classList.toggle('scroll-lock');
+function handleModalOpen() {
+  modal.classList.remove('backdrop--is-hidden');
+  document.body.addEventListener('keydown', handleClose);
+  document.body.classList.add('overflow');
 }
 
-function createServicesMurkup() {
-  let servicesMurkup;
-  if (window.innerWidth >= 1440) {
-    servicesMurkup = servicesData.map(item => {
-      return `<div class="serviceWrapper">
-            <details>
-              <summary class="summary">
-                <p>
-                  <span class="numbering">0${item.id}.</span>
-                  <span>${item.title}</span>​
-                </p>
-              </summary>
-              <div class="serviceInner">
-                <p class="description">${item.description}</p>
-              </div>
-              <img
-                src="${servicesImages[item.id - 1]}"
-                alt="${item.title}"
-              />
-            </details>
-            <span class="underLine"></span>
-          </div>`;
-    });
-  } else {
-    servicesMurkup = servicesData.map(item => {
-      return `<div
-              class="inner"
-              style="
-                background-image: linear-gradient(
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
-                ),
-                url(${servicesImages[item.id - 1]});
-              "
-            >
-              <button class="btn"
-              data-id="${item.id}"
-              >
-              ${item.title}
-              ​</button>
-            </div>`;
-    });
+function handleModalClose() {
+  modal.classList.add('backdrop--is-hidden');
+  document.body.removeEventListener('keydown', handleClose);
+  document.body.classList.remove('overflow');
+}
+
+const handleClose = ({ target, currentTarget, code }) => {
+  // console.log('target, currentTarget, code', target, currentTarget, code)
+  if (target === currentTarget || code === 'Escape') {
+    handleModalClose();
   }
+};
 
-  servicesEl.innerHTML = servicesMurkup;
+// function createServicesMurkup() {
+//   let servicesMurkup;
+//   if (window.innerWidth >= 1440) {
+//     servicesMurkup = servicesData.map((item) => {
+//       return `<li class="service-wrapper">
+//             <details>
+//               <summary class="summary">
+//                 <p>
+//                   <span class="numbering">0${item.id}.</span>
+//                   <span>${item.title}</span>​
+//                 </p>
+//               </summary>
+//               <div class="service-inner">
+//                 <p class="service-description">${item.description}</p>
+//               </div>
+//               <img
+//               class="service-img"
+//                 src="${servicesImages[item.id - 1]}"
+//                 alt="${item.title}"
+//               />
+//             </details>
+//             <span class="service-underline"></span>
+//           </li>`;
+//     });
+//   } else {
+//     servicesMurkup = servicesData.map((item) => {
+//       return `<li
+//               class="service-inner-mobile"
+//               style="
+//                 background-image: linear-gradient(
+//                 rgba(0, 0, 0, 0.7),
+//                 rgba(0, 0, 0, 0.7)
+//                 ),
+//                 url(${servicesImages[item.id - 1]});
+//               "
+//             >
+//               <button class="services-btn"
+//               data-id="${item.id}"
+//               >
+//               ${item.title}
+//               ​</button>
+//             </li>`;
+//     });
+//   }
+
+//   servicesEl.innerHTML = servicesMurkup;
+// }
+
+function handleAnimation() {
+  const servicesSection = document.querySelector('.services-section');
+  const circulElements = document.querySelectorAll(
+    '.services-animation__circul'
+  );
+
+  const mySection = servicesSection.getBoundingClientRect();
+  const isServicesSectionVisible =
+    mySection.top + 200 < window.innerHeight && mySection.bottom - 100 >= 0;
+
+  circulElements.forEach(item => {
+    if (isServicesSectionVisible) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
 }

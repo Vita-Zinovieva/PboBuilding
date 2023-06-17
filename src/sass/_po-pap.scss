@@ -4,7 +4,7 @@
   position: absolute;
   left: 0px;
   top: 158px;
-  
+
     @media screen and (min-width: 768px){
       //top: 158px;
       top: 90%;
@@ -25,7 +25,7 @@
       transform: translate(-50%, -50%);
     */
   }
-} 
+}
 .form-send{
   visibility: hidden;
 }
@@ -35,13 +35,13 @@
 
 .form-send.show {
   visibility: visible;
-} 
+}
 
 .form-wrapper{
   position: absolute;
   left: 0px;
   background: #FFFFFF;
- 
+
   @media screen and (min-width: $desktop) {
     left: calc(50% - 1062px/2);
     border-radius: 20px;
@@ -49,12 +49,12 @@
   }
 }
 .form{
-  padding: 0 15px  0 15px; 
+  padding: 0 15px  0 15px;
   @media screen and (min-width: $desktop) {
-    padding: 0 234px  0 234px; 
+    padding: 0 234px  0 234px;
   }
 }
-  
+
 .form-title{
   width: auto;
   height: 29px;
@@ -86,11 +86,11 @@ textarea {
 textarea {
   height: 165px;
   padding: 16px 0 0 16px;
-  
+
   @media screen and (min-width: $desktop){
    height: 133px;
    width: 594px;
-   
+
   }
 }
 
@@ -119,7 +119,7 @@ textarea {
   font-size: 14px;
   line-height: 17px;
   color: #888888;
-  
+
   @media screen and (min-width: $desktop) {
     left: calc(50% - 134px/2 - 214px);
     top: 16px;
@@ -129,7 +129,7 @@ textarea {
      input::placeholder {
       left: calc(50% - 81px/2 - 87px);
       top: 14px;
-      
+
   }
 }
 
@@ -139,7 +139,7 @@ textarea {
   right: 24px;
   top: 24px;
   cursor: pointer;
-  
+
   &:hover {
     color: $defolt-color;
   }
@@ -161,7 +161,7 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
   margin: 0 50px 24px 50px;
-  
+
   &:hover,
   &:focus {
     background-color: $hover-color;
@@ -174,13 +174,13 @@ textarea {
 }
 
 ///Анімація
-/// 
+///
 .element-animation {
   display: none;
 }
- 
+
 .element-animation {
-  @media screen and (min-width: $desktop) {  
+  @media screen and (min-width: $desktop) {
     position: relative;
     width: 50px;
     height: 1px;
@@ -189,13 +189,13 @@ textarea {
     display: block;
 }
 .form-send:hover.circul{
-  animation-play-state: running; 
+  animation-play-state: running;
 }
 
 .line{
   width: 87px;
   color:#2B4570;
-} 
+}
 
 /* .circul {
   border-radius: 50%;
@@ -241,9 +241,9 @@ textarea {
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-delay: 1s;
-    
+
   }
-    @keyframes blue-circle{ 
+    @keyframes blue-circle{
       0%{
         left: 0px
       }
@@ -255,7 +255,7 @@ textarea {
         background-color:#FBCA16;
       }
     }
-} 
+}
 
 .element-left{
   position: absolute;
@@ -267,5 +267,5 @@ textarea {
   position: absolute;
   top: 85px;
   right: 280px;
-  
+
 }
