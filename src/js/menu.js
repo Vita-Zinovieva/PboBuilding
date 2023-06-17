@@ -13,37 +13,33 @@ menu.addEventListener('click', event => {
 });
 
 //Validation input form
-/* (function(){
-let input = document.querySelector('.input');
-console.log(input);
 let form  = document.querySelector('form');
 console.log(form);
+let fields = form.querySelectorAll('.field');
+console.log(fields);
 
-let elem               = document.createElement('div');
-      elem.id            = 'notify';
-      elem.style.display = 'none';
+form.addEventListener('submit', function (event) {
+  event.preventDefault()
 
-      form.appendChild(elem);
+  var errors = form.querySelectorAll('.error')
 
-  input.addEventListener('invalid', function(event){
-    event.preventDefault();
-    if ( ! event.target.validity.valid ) {
-      input.className    = 'invalid animated shake';
-      elem.textContent   = 'Username should only contain lowercase letters e.g. john';
-      elem.className     = 'error';
-      elem.style.display = 'block';
+  for (var i = 0; i < errors.length; i++) {
+    errors[i].remove()
+  }
+
+  for (var i = 0; i < fields.length; i++) {
+    if (!fields[i].value) {
+      console.log('field is blank', fields[i])
+      var error = document.createElement('div')
+      error.className = 'error'
+      error.style.color = 'red'
+      error.innerHTML = 'Cannot be blank'
+      form[i].parentElement.insertBefore(error, fields[i])
     }
-  });
+  }
 
-  input.addEventListener('input', function(event){
-    if ( 'block' === elem.style.display ) {
-      input.className = '';
-      elem.style.display = 'none';
-    }
-  });
+})
 
-})(); 
- */
 
 //відкриття форми
 
