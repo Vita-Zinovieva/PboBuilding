@@ -72,6 +72,7 @@
   }
 }
 .input,
+/* .input:valid , */
 textarea {
   width: 357px;
   border-radius: 20px;
@@ -106,6 +107,11 @@ textarea {
   }
   }
 }
+
+/* .input:invalid {
+  border-color:#D64646;
+}  */
+
 
 ::placeholder{
   position: absolute;
