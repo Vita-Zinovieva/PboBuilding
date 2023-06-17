@@ -5,8 +5,11 @@
 .services-container {
   display: flex;
   flex-direction: column;
-  padding-right: 109px;
-  padding-left: 217px;
+
+  @media screen and (min-width: $desktop) {
+    padding-right: 109px;
+    padding-left: 217px;
+  }
 }
 
 .services-title-wrapper {
@@ -298,7 +301,6 @@ details[open] + .service-underline {
 }
 
 .services-modal-description {
-  // margin-bottom: 12px;
   font-weight: 300;
   font-size: 20px;
   line-height: calc(24 / 20);
