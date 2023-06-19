@@ -1,0 +1,176 @@
+.steps {
+  padding-top: 68px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 120px;
+  }
+}
+.steps_title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: $curent-text-color;
+  margin-bottom: 36px;
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 77px;
+  }
+}
+.steps_list {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  width: 358px;
+  margin: 0 auto;
+  @media screen and (min-width: $desktop) {
+    width: 1062px;
+  }
+}
+
+.steps_circle {
+  width: 25px;
+  height: 25px;
+  background-color: $defolt-color;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step_item {
+  position: relative;
+  display: flex;
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  &:nth-child(even) {
+    text-align: right;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 79px;
+  }
+}
+.step_info {
+  width: 142px;
+  height: 86px;
+  @media screen and (min-width: $desktop) {
+    width: 434px;
+    height: 99px;
+  }
+}
+.step_title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $defolt-color;
+  margin-bottom: 4px;
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 7px;
+  }
+}
+.step_description {
+  font-size: 16px;
+  line-height: 1.2;
+  color: $curent-text-color;
+  @media screen and (min-width: $desktop) {
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+.step_line {
+  height: calc(100% - 68px);
+
+  width: 1px;
+  border-left: 1px solid;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  @media screen and (min-width: $desktop) {
+    height: calc(100% - 81px);
+  }
+}
+
+/**
+  Animation----------------------------------------------------------------------
+*/
+
+.animationCircle {
+  animation-name: blue-circle-steps;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.animationTitle {
+  animation-name: blue-title-steps;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-timing-function: linear-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blue-title-steps {
+  0% {
+  }
+  3% {
+    color: #fbca16;
+  }
+  17% {
+    color: #fbca16;
+  }
+  20% {
+    color: $defolt-color;
+  }
+
+  100% {
+    color: $defolt-color;
+  }
+}
+
+@keyframes blue-circle-steps {
+  0% {
+    background-color: $defolt-color;
+  }
+  3% {
+    background-color: #fbca16;
+  }
+  17% {
+    background-color: #fbca16;
+  }
+  20% {
+    background-color: $defolt-color;
+  }
+  100% {
+    background-color: $defolt-color;
+  }
+}
+
+.activate_animation_step {
+  animation-play-state: running;
+}
+.step_item:nth-child(2) .steps_circle,
+.step_item:nth-child(2) .step_info .step_title {
+  animation-delay: 3s;
+}
+.step_item:nth-child(3) .steps_circle,
+.step_item:nth-child(3) .step_info .step_title {
+  animation-delay: 6s;
+}
+.step_item:nth-child(4) .steps_circle,
+.step_item:nth-child(4) .step_info .step_title {
+  animation-delay: 9s;
+}
+.step_item:nth-child(5) .steps_circle,
+.step_item:nth-child(5) .step_info .step_title {
+  animation-delay: 12s;
+}
