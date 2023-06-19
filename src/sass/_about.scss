@@ -22,6 +22,86 @@
   }
 }
 
+.about_title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $curent-text-color;
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+  }
+}
+
+.about_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $curent-text-color;
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+.about_info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  @media screen and (min-width: $desktop) {
+    margin-top: 36px;
+    justify-content: space-between;
+  }
+}
+.info_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 171px;
+  height: 66px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: auto;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 435px;
+    height: 87px;
+  }
+}
+.info_number {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  color: $defolt-color;
+  margin-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.36;
+    margin-right: 50px;
+  }
+}
+
+.info_text {
+  font-size: 16px;
+  line-height: 1.18;
+  color: $disable-color;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
 /**
  Animation block ----------------------------------------------------------------------
 */
@@ -105,83 +185,3 @@
 /**
   Animation block END----------------------------------------------------------------------
 */
-
-.about_title {
-  text-align: center;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.2;
-  color: $curent-text-color;
-  @media screen and (min-width: $desktop) {
-    font-weight: 600;
-    font-size: 36px;
-  }
-}
-
-.text {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.2;
-  color: $curent-text-color;
-  @media screen and (min-width: $desktop) {
-    font-size: 20px;
-  }
-
-  &:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
-}
-.info {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 16px;
-  margin-top: 16px;
-  @media screen and (min-width: $desktop) {
-    margin-top: 36px;
-    justify-content: space-between;
-  }
-}
-.info_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 171px;
-  height: 66px;
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    width: auto;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 435px;
-    height: 87px;
-  }
-}
-.number {
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.2;
-  color: $defolt-color;
-  margin-bottom: 4px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-    margin-right: 20px;
-  }
-  @media screen and (min-width: $desktop) {
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 1.36;
-    margin-right: 50px;
-  }
-}
-
-.info_text {
-  font-size: 16px;
-  line-height: 1.18;
-  color: $disable-color;
-
-  @media screen and (min-width: $desktop) {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-}

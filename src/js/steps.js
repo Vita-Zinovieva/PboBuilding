@@ -1,7 +1,7 @@
 import startAnimation from './startAnimation';
 
 const animationCircleStart = () => {
-  startAnimation('steps', '.circle', 'animationCircle');
+  startAnimation('steps', '.steps_circle', 'animationCircle');
 };
 
 const animationTitleleStart = () => {

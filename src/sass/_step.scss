@@ -4,7 +4,7 @@
     padding-top: 120px;
   }
 }
-.title {
+.steps_title {
   font-weight: 400;
   font-size: 24px;
   line-height: 1.2;
@@ -30,7 +30,7 @@
   }
 }
 
-.circle {
+.steps_circle {
   width: 25px;
   height: 25px;
   background-color: $defolt-color;
@@ -84,7 +84,7 @@
     font-size: 20px;
   }
 }
-.line {
+.step_line {
   height: calc(100% - 68px);
 
   width: 1px;
@@ -158,19 +158,19 @@
 .activate_animation_step {
   animation-play-state: running;
 }
-.step_item:nth-child(2) .circle,
+.step_item:nth-child(2) .steps_circle,
 .step_item:nth-child(2) .step_info .step_title {
   animation-delay: 3s;
 }
-.step_item:nth-child(3) .circle,
+.step_item:nth-child(3) .steps_circle,
 .step_item:nth-child(3) .step_info .step_title {
   animation-delay: 6s;
 }
-.step_item:nth-child(4) .circle,
+.step_item:nth-child(4) .steps_circle,
 .step_item:nth-child(4) .step_info .step_title {
   animation-delay: 9s;
 }
-.step_item:nth-child(5) .circle,
+.step_item:nth-child(5) .steps_circle,
 .step_item:nth-child(5) .step_info .step_title {
   animation-delay: 12s;
 }
