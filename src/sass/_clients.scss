@@ -2,17 +2,16 @@
   position: relative;
   padding-top: 0px;
   background-color: white;
-  min-width: 1167px;
+  min-width: 358px;
   min-height: 122px;
   padding: 68px 0 68px;
 
   @media screen and (min-width: 769px) {
-    .ant-carousel {
-      min-width: 2210px;
+    
+      //min-width: 2210px;
       min-height: 204px;
       padding: 120px 0 120px;
     }
-  }
   
 }
 
@@ -64,12 +63,14 @@
   line-height: 1.2;
   text-align: center;
   color: #131200;
-  margin: 0 auto 36px;
+  padding-bottom: 36px;
 
   @media screen and (min-width: 769px){
     font-weight: 600;
     font-size: 36px;
-    margin: 0 auto 68px;
+    padding-bottom: 68px;
+    //margin: 0 auto 68px;
+    text-align: center;
   }
 
 }
