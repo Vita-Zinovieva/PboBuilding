@@ -1,0 +1,128 @@
+.preference-container{
+  min-width: 358px;
+  min-height: 486px;
+  @media screen and (min-width: 768px) {
+    min-width: 1280px;
+    min-height: 556px;
+  }
+}
+.preference-wraper{
+  text-align: center;
+  margin-bottom: 36px;
+  @media screen and (min-width: 768px) {
+    padding: 0 109px;
+    margin-bottom: 68px;
+  }
+}
+.preference__content{
+  min-width: 358px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding: 0 109px;
+  }
+}
+.preference-title{ 
+  font-family: 'Fira Sans';
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $curent-text-color;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    font-weight: 400;
+    text-align: start;
+  }
+  }
+
+.preference-text{
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color:$disable-color;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+.preference__photo {  
+  background-size: contain;
+  min-width: 358px;
+  display: inline-block;
+  border-radius: 20px;
+  margin-bottom: 21px;
+  
+  @media screen and (min-width: 768px) {
+    margin: 0 24 0 0;
+  }
+}
+.preference__detailes{
+  min-width: 358px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 411px;
+  }
+}
+ 
+details {
+  position: relative;
+} 
+
+details[open] > details {
+  border-bottom: 1px solid #C5C3C6;
+  width: 358px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-bottom: 0px;
+    margin-right: 24px;
+  }
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+/* Убираем стандартный маркер Firefox */
+summary {
+  list-style: none;
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  padding-bottom: 15px;
+  color: $curent-text-color;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+summary::after {
+  display: inline-block;
+  width: 16px;
+  height: 7px;
+  transition: transform 0.2s;
+  will-change: transform;
+  position: absolut;
+  right: 4;
+  background-image: url(../images/svg/arowdoun.svg);
+  //display: none;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+  content: " ";
+} 
+
+details summary:after {
+  position: absolute;
+  content: " ";
+  color: #2b4570;
+  font-size: 16px;
+  line-height: 1.1875;
+  top: 3px
+}
