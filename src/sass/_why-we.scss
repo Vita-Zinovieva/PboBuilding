@@ -1,35 +1,36 @@
-.preference-container{
+/* .preference-container{
   min-width: 358px;
   min-height: 486px;
   @media screen and (min-width: 768px) {
     min-width: 1280px;
     min-height: 556px;
   }
-}
+} */
 .preference-wraper{
   text-align: center;
-  margin-bottom: 36px;
+  padding-bottom: 36px;
   @media screen and (min-width: 768px) {
-    padding: 0 109px;
-    margin-bottom: 68px;
+   // padding: 0 109px 68px;
+    //margin-bottom: 68px;
   }
 }
 .preference__content{
   min-width: 358px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     padding: 0 109px;
   }
 }
 .preference-title{ 
   font-family: 'Fira Sans';
-  text-align: center;
-  font-size: 24px;
+  font-style: normal;
   font-weight: 400;
+  font-size: 24px;
   line-height: 1.2;
+  text-align: center;
   color: $curent-text-color;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     font-size: 36px;
     font-weight: 400;
     text-align: start;
@@ -43,21 +44,27 @@
   font-size: 14px;
   line-height: 1.2;
   color:$disable-color;
-
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
+  width: 358px;
+  
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
     font-weight: 400;
+    width: 411px;
+
   }
 }
 .preference__photo {  
   background-size: contain;
   min-width: 358px;
+  min-height: 158px;
   display: inline-block;
   border-radius: 20px;
   margin-bottom: 21px;
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     margin: 0 24 0 0;
+    min-width: 628px;
+    min-height: 455px;
   }
 }
 .preference__detailes{
@@ -73,20 +80,21 @@ details {
 } 
 
 details[open] > details {
-  border-bottom: 1px solid #C5C3C6;
+ // border-bottom: 1px solid #C5C3C6;
   width: 358px;
-  margin-bottom: 20px;
+  padding-bottom: 12px;
 
   @media screen and (min-width: 768px) {
     display: flex;
     margin-bottom: 0px;
     margin-right: 24px;
+    padding-bottom: 17px;
   }
 }
 summary::-webkit-details-marker {
   display: none;
 }
-/* Убираем стандартный маркер Firefox */
+
 summary {
   list-style: none;
   font-family: 'Fira Sans';
@@ -110,7 +118,7 @@ summary::after {
   position: absolut;
   right: 4;
   background-image: url(../images/svg/arowdoun.svg);
-  //display: none;
+  
 }
 
 details[open] > summary::after {
