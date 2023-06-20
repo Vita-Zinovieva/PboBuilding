@@ -7,11 +7,18 @@
   }
 } */
 .preference-wraper{
-  text-align: center;
-  padding-bottom: 36px;
-  @media screen and (min-width: 768px) {
-   // padding: 0 109px 68px;
-    //margin-bottom: 68px;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+
+  @media screen and (min-width: 1440px) {
+    justify-content: left;
+    margin-bottom: 68px;
+    padding: 0 109px;
   }
 }
 .preference__content{
@@ -37,7 +44,7 @@
   }
   }
 
-.preference-text{
+.preference-text {
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 300;
@@ -62,7 +69,7 @@
   margin-bottom: 21px;
   
   @media screen and (min-width: 1440px) {
-    margin: 0 24 0 0;
+    padding: 0 24 0 0;
     min-width: 628px;
     min-height: 455px;
   }
@@ -133,4 +140,78 @@ details summary:after {
   font-size: 16px;
   line-height: 1.1875;
   top: 3px
+}
+
+//Animation//
+
+.preference-animation {
+  position: relative;
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid $curent-text-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 89px;
+    &.desktop {
+      display: none;
+}
+  }
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.preference:hover .preference-animation__circul {
+  animation-play-state: running;
+}
+.preference-animation__circul {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $defolt-color;
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(-7%, -50%);
+  animation: preference-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 1439.98px) {
+  @keyframes preference-circle {
+    0% {
+      left: 0px;
+    }
+    50% {
+      background-color: #fbca16;
+    }
+    100% {
+      left: 40px;
+      background-color: #fbca16;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  @keyframes preference-circle {
+    0% {
+      left: 0px;
+    }
+    50% {
+      background-color: #fbca16;
+    }
+    100% {
+      left: 70px;
+      background-color: #fbca16;
+    }
+  }
 }
