@@ -6,8 +6,8 @@ let mobileMenu = document.querySelector('.menu-mobile');
 
 menu.addEventListener('click', event => {
   event.preventDefault();
-  menu.classList.toggle('active');
-  headerMenu.classList.toggle('active');
+  menu.classList.toggle('start');// замінила active на start+ в стилях
+  headerMenu.classList.toggle('start');
   mobileMenu.classList.toggle('hidden');
   body.classList.toggle('lock');
 });
