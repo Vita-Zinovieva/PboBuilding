@@ -15,7 +15,7 @@
   justify-content: center;
   margin-bottom: 36px;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     justify-content: left;
     margin-bottom: 68px;
     padding: 0 109px;
@@ -23,7 +23,7 @@
 }
 .preference__content{
   min-width: 358px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     display: flex;
     padding: 0 109px;
   }
@@ -37,7 +37,7 @@
   text-align: center;
   color: $curent-text-color;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     font-size: 36px;
     font-weight: 400;
     text-align: start;
@@ -53,7 +53,7 @@
   color:$disable-color;
   width: 358px;
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $desktop) {
     font-size: 20px;
     font-weight: 400;
     width: 411px;
@@ -68,7 +68,7 @@
   border-radius: 20px;
   margin-bottom: 21px;
   
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     padding: 0 24 0 0;
     min-width: 628px;
     min-height: 455px;
@@ -84,10 +84,16 @@
  
 details {
   position: relative;
+  border-bottom: none;
+
+  @media screen and (min-width: 768px) {
+    border-bottom: 1px solid #C5C3C6;
+    //padding-bottom: 14px;
+  }
 } 
 
 details[open] > details {
- // border-bottom: 1px solid #C5C3C6;
+  border-bottom: 1px solid #C5C3C6;
   width: 358px;
   padding-bottom: 12px;
 
@@ -96,6 +102,7 @@ details[open] > details {
     margin-bottom: 0px;
     margin-right: 24px;
     padding-bottom: 17px;
+    
   }
 }
 summary::-webkit-details-marker {
@@ -113,6 +120,8 @@ summary {
   color: $curent-text-color;
   @media screen and (min-width: 768px) {
     font-size: 24px;
+    padding-bottom: 28px;
+    padding-top: 14px;
   }
 }
 
@@ -125,6 +134,10 @@ summary::after {
   position: absolut;
   right: 4;
   background-image: url(../images/svg/arowdoun.svg);
+    @media screen and (min-width: 768px) {
+     // top: 25px;
+    }
+  
   
 }
 
@@ -138,8 +151,12 @@ details summary:after {
   content: " ";
   color: #2b4570;
   font-size: 16px;
-  line-height: 1.1875;
-  top: 3px
+  line-height: 1.2;
+  top: 7px;
+    @media screen and (min-width: 768px) {
+      top: 27px;
+   
+  }
 }
 
 //Animation//
