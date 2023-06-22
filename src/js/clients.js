@@ -1,5 +1,61 @@
+import Swiper, {Autoplay} from 'swiper';
 
-function Ant(crslId) {
+//Swiper.use ([Autoplay]);
+
+const swiper = new Swiper('.swiper', {
+
+  modules: [Autoplay],
+  speed: 400,
+  init: true,
+  loop: true, 
+  pagination: false,
+  navigation: true,
+  preventClicks: true,
+
+  simulateTouch: true,
+  touchRatio: 1,
+  touchAngle: 45,
+  grabCursor:true,
+  freeMode: true,
+
+  mousewheel:{
+    sensitivity:1,
+  },
+
+  breakpoints: {
+    390: {
+      slidesPerView: 3,
+      spaceBetween: 12,
+    }, 
+    
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 68,
+    }}, 
+
+    autoplay: {
+      delay: 3000,
+      pauseOnMouseEnter: 	false,
+      disableOnInteraction: false,	
+      stopOnLastSlide: false,
+    }
+
+  
+}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* function Ant(crslId) {
 
   let id = document.getElementById(crslId);
     if(id) {
@@ -159,4 +215,4 @@ function Ant(crslId) {
   
   };  
   new Ant();
-  
+   */
