@@ -158,20 +158,20 @@
     transform: translateY(-100%);
     overflow: auto;
   }
-  .header-menu.active {
+  .header-menu.start {
     transform: translateY(0);
     z-index: 2;
   }
 
-  .menu-burger.active::before {
+  .menu-burger.start::before {
     transform: rotate(45deg);
     top: 7px;
   }
-  .menu-burger.active::after {
+  .menu-burger.start::after {
     transform: rotate(-45deg);
     bottom: 7px;
   }
-  .menu-burger.active span {
+  .menu-burger.start span {
     transform: scale(0);
   }
   .header-menu__list {

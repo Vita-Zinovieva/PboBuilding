@@ -1,0 +1,92 @@
+
+
+
+   swiper-container {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    swiper-slide {
+      text-align: center;
+      //font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } 
+
+.ant-carousel {
+  position: relative;
+  padding-top: 0px;
+  background-color: white;
+  min-width: 358px;
+  min-height: 122px;
+  padding: 68px 0 68px;
+
+  @media screen and (min-width: 769px) {
+      min-width: 100%;
+      //min-width: 2210px;
+      min-height: 204px;
+      padding: 120px 0 120px;
+    }
+  
+}
+
+.ant-carousel-hider {
+  overflow: hidden;
+  min-width: 0;
+}
+/* 
+.ant-carousel-list {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+ 
+} 
+
+.ant-carousel-element {
+  display: block;
+  flex: 0 0 auto;
+} */
+
+
+@media screen and (min-width: 390px) and (max-width: 768px) {
+.ant-carousel-logo {
+  width: 119px;
+  height: 57px;
+  text-align: center;
+  background-size: cover;
+  
+}
+}
+    @media screen and (min-width: 769px) {
+      .ant-carousel-logo {
+      width: 194px;
+      height: 93px;
+      text-align: center;
+      background-size: cover;
+    }}
+
+.ant-title{
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: $curent-text-color;
+  padding-bottom: 36px;
+
+  @media screen and (min-width: 1440px){
+    font-weight: 600;
+    font-size: 36px;
+    padding-bottom: 68px;
+    //margin: 0 auto 68px;
+    text-align: center;
+  }
+
+}
