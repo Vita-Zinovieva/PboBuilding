@@ -1,0 +1,269 @@
+.gallery-section {
+  padding-top: 68px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 120px;
+  }
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $desktop) {
+    // padding-right: 111px;
+    // padding-left: 111px;
+  }
+}
+
+.projects-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+  margin-bottom: 36px;
+  margin-left: auto;
+
+  @media screen and (min-width: $desktop) {
+    gap: 24px;
+    margin-left: 109px;
+  }
+}
+
+.projects-title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: calc(29 / 24);
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: calc(43 / 36);
+  }
+}
+
+.projects-animation {
+  position: relative;
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid $curent-text-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 89px;
+  }
+}
+
+.pa-reverse {
+  transform: rotate(180deg);
+
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.projects-title-wrapper:hover
+  .projects-animation__circle
+  .projects-title-wrapper:focus
+  .projects-animation__circle {
+  animation-play-state: running;
+}
+
+.projects-animation__circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $defolt-color;
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(-7%, -50%);
+
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.active-projects-animation {
+  animation-name: projects-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  /* або коротко
+      animation: blue-circle, 2s, linear, 1, 1s;*/
+}
+
+@media screen and (max-width: 1439.98px) {
+  @keyframes projects-circle {
+    0% {
+      left: 0px;
+    }
+    50% {
+      background-color: #fbca16;
+    }
+    100% {
+      left: 40px;
+      background-color: #fbca16;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  @keyframes projects-circle {
+    0% {
+      left: 0px;
+    }
+    50% {
+      background-color: #fbca16;
+    }
+    100% {
+      left: 70px;
+      background-color: #fbca16;
+    }
+  }
+}
+
+.projects-carousel {
+  display: flex;
+  position: relative;
+
+  @media screen and (min-width: $desktop) {
+    width: 1280px;
+    height: 594px;
+  }
+}
+
+.projects-list {
+  @media screen and (min-width: $desktop) {
+    margin: 0 109px;
+  }
+}
+
+.projects-slide {
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  opacity: 0;
+
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 628px 410px;
+    grid-template-rows: 288px 288px;
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+}
+
+.projects-slide[data-active] {
+  opacity: 1;
+}
+
+.project-img {
+  width: 170px;
+  height: 161px;
+  border-radius: 20px;
+
+  @media screen and (min-width: $desktop) {
+    width: 410px;
+    height: 288px;
+  }
+}
+
+.project-img:first-child {
+  margin-right: 14px;
+
+  @media screen and (min-width: $desktop) {
+    width: 628px;
+    height: 593px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+
+.project-img__desktop {
+  @media screen and (max-width: 1439.98px) {
+    display: none;
+  }
+}
+
+.project-descr__wrapper {
+  min-width: 358px;
+  margin-top: 4px;
+  padding: 20px 48px 20px 24px;
+  background: rgba(136, 136, 136, 0.1);
+  border-radius: 20px;
+  position: relative;
+
+  @media screen and (min-width: $desktop) {
+    width: 628px;
+    padding: 44px 109px 50px 84px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.project-descr {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  color: $curent-text-color;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
+}
+
+.location-link {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+
+  @media screen and (max-width: 1439.98px) {
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+  }
+
+  @media screen and (min-width: $desktop) {
+    right: 24px;
+    bottom: 24px;
+  }
+}
+
+.location-icon {
+  fill: $defolt-color;
+  stroke: transparent;
+}
+
+.location-icon:hover,
+.location-icon:focus {
+  fill: $hover-color;
+  stroke: transparent;
+}
+
+.projects-button-prev,
+.projects-button-next {
+  width: 31px;
+  height: 31px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 290px;
+
+  @media screen and (max-width: 1439.68px) {
+    display: none;
+  }
+}
+
+.projects-button-prev {
+  left: 31px;
+}
+
+.projects-button-next {
+  right: 31px;
+}

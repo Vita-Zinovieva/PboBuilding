@@ -1,5 +1,9 @@
 .services-section {
-  padding-top: 120px;
+  padding-top: 68px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 120px;
+  }
 }
 
 .services-container {
@@ -17,11 +21,12 @@
   align-items: center;
   gap: 12px;
   margin-right: auto;
-  margin-bottom: 68px;
+  margin-bottom: 36px;
   margin-left: auto;
 
   @media screen and (min-width: $desktop) {
     gap: 24px;
+    margin-bottom: 68px;
   }
 }
 
@@ -53,11 +58,12 @@
   transform: rotate(180deg);
 }
 
-.services-title-wrapper:hover .services-animation__circul {
+.services-title-wrapper:hover .services-animation__circle
+.services-title-wrapper:focus .services-animation__circle {
   animation-play-state: running;
 }
 
-.services-animation__circul {
+.services-animation__circle {
   width: 14px;
   height: 14px;
   border-radius: 50%;
