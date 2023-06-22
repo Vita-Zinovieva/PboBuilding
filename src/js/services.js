@@ -123,7 +123,7 @@ const handleClose = ({ target, currentTarget, code }) => {
 function handleAnimation() {
   const servicesSection = document.querySelector('.services-section');
   const circulElements = document.querySelectorAll(
-    '.services-animation__circul'
+    '.services-animation__circle'
   );
 
   const mySection = servicesSection.getBoundingClientRect();
