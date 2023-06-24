@@ -1,6 +1,6 @@
 import Swiper, {Autoplay} from 'swiper';
 
-//Swiper.use ([Autoplay]);
+
 
 const swiper = new Swiper('.swiper', {
 
@@ -11,6 +11,7 @@ const swiper = new Swiper('.swiper', {
   pagination: false,
   navigation: true,
   preventClicks: true,
+  direction: 'horizontal', 
 
   simulateTouch: true,
   touchRatio: 1,
