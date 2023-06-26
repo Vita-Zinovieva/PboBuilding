@@ -1,7 +1,4 @@
 import Swiper, {Autoplay} from 'swiper';
-
-
-
 const swiper = new Swiper('.swiper', {
 
   modules: [Autoplay],
