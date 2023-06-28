@@ -1,3 +1,5 @@
+import Swiper, { Navigation } from 'swiper';
+
 document.addEventListener('scroll', handleProjectAnimation);
 const buttonEls = document.querySelectorAll('[data-carousel-button]');
 
@@ -20,16 +22,45 @@ function handleProjectAnimation() {
   });
 }
 
-buttonEls.forEach(button => {
-  button.addEventListener('click', () => {
-    const ofset = button.dataset.carouselButton === 'next' ? 1 : -1;
-    const slides = button.closest('[data-carousel]').querySelector('[data-slides]');
-    const activeSlide = slides.querySelector('[data-active]');
-    let newIndex = [...slides.children].indexOf(activeSlide) + ofset;
-    if(newIndex < 0) newIndex = slides.children.length - 1;
-    if(newIndex >= slides.children.length) newIndex = 0;
+const swiper = new Swiper('.projects-swiper', {
+  modules: [Navigation],
+  direction: 'horizontal',
 
-    slides.children[newIndex].dataset.active = true;
-    delete activeSlide.dataset.active;
-  })
-})
+  simulateTouch: true,
+  touchRatio: 1,
+  touchAngle: 45,
+  grabCursor: true,
+
+  speed: 400,
+  loop: true,
+  slidesPerView: 1,
+
+  breakpoints: {
+    390: {
+      slidesPerView: 1,
+    },
+    780: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1440: {
+      slidesPerView: 1,
+    }
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+});
