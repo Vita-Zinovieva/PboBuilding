@@ -14,9 +14,9 @@ menu.addEventListener('click', event => {
 
 //Validation input form
 let form  = document.querySelector('form');
-console.log(form);
+//console.log(form);
 let fields = form.querySelectorAll('.field');
-console.log(fields);
+//console.log(fields);
 
 form.addEventListener('submit', function (event) {
   event.preventDefault()

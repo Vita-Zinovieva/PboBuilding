@@ -179,10 +179,10 @@ details summary:after {
   transform: rotate(180deg);
 }
 
- .preference-wrapper:hover 
- .preference-animation__circul {
+.preference-wrapper:hover,
+.preference-animation__circul {
   animation-play-state: running;
-} 
+}  
 .preference-animation__circul {
   width: 14px;
   height: 14px;
