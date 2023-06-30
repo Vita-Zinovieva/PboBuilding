@@ -1,25 +1,27 @@
 .form-container{
-  min-width: 391px;
+  min-width: 390px;
   height: 604px;
   position: absolute;
   left: 0px;
   top: 158px;
+  z-index: 5;
+
 
     @media screen and (min-width: 768px){
-      //top: 158px;
-      top: 90%;
+      top: 500px;
+      //top: 50%;
       left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%);
+      padding: 0;
     }
 
   @media screen and (min-width: $desktop) {
-    //max-width: 1062px;
     min-width: 1062px;
     height: 545px;
-    top: 80%;
+    //top: 50%;
+    //top: calc(50% - 545px/2 + 73px);
     /*left: calc(50% - 1062px/2);
-    top: calc(50% - 545px/2 + 73px);
       left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%);
@@ -41,7 +43,7 @@
   position: absolute;
   left: 0px;
   background: #FFFFFF;
-
+ 
   @media screen and (min-width: $desktop) {
     left: calc(50% - 1062px/2);
     border-radius: 20px;
@@ -49,7 +51,7 @@
   }
 }
 .form{
-  padding: 0 15px  0 15px;
+  //padding: 0 15px  0 15px;
   @media screen and (min-width: $desktop) {
     padding: 0 234px  0 234px;
   }
@@ -71,6 +73,10 @@
     margin: 68px auto 36px;
   }
 }
+fieldset{
+  margin-right: auto;
+  margin-left: 17px;}
+
 .input,
 textarea {
   width: 357px;
@@ -86,6 +92,7 @@ textarea {
 textarea {
   height: 165px;
   padding: 16px 0 0 16px;
+  margin-bottom: 0px;
 
   @media screen and (min-width: $desktop){
    height: 133px;

@@ -179,9 +179,10 @@ details summary:after {
   transform: rotate(180deg);
 }
 
-.preference:hover .preference-animation__circul {
+ .preference-wrapper:hover 
+ .preference-animation__circul {
   animation-play-state: running;
-}
+} 
 .preference-animation__circul {
   width: 14px;
   height: 14px;
@@ -191,19 +192,22 @@ details summary:after {
   left: 0%;
   top: 50%;
   transform: translate(-7%, -50%);
-  animation: preference-circle;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-
+ 
   @media screen and (min-width: $desktop) {
     width: 25px;
     height: 25px;
   }
 }
 
-@media screen and (max-width: 1439.98px) {
+.preference__active-circul{
+  animation: preference-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 1439px) {
   @keyframes preference-circle {
     0% {
       left: 0px;
