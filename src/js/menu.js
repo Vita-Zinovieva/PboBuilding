@@ -85,3 +85,24 @@ async function sendMessage(form) {
    }
 }
 
+/* 
+document.addEventListener('scroll', popupAnimation);
+
+function popupAnimation() {
+  const formSection = document.getElementById('form');
+  const mooveCircul = document.querySelectorAll('.circul');
+ 
+  const mySection = formSection.getBoundingClientRect();
+  const isformSectionVisible =
+    mySection.top < window.innerHeight && mySection.bottom >= 0;
+
+  mooveCircul.forEach(item => {
+    if (isformSectionVisible) {
+      item.classList.add('popup-circul-active');
+    } else {
+      item.classList.remove('popup-circul-active');
+    }
+  });
+}; */
+
+
